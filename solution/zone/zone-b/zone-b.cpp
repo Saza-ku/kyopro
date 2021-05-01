@@ -142,27 +142,15 @@ int main() {
   int N, X, Y;
   cin >> N >> X >> Y;
   vector<pair<int, int>> p(N);
-  rep(i, N) cin >> p[i].first >> p[i].second;
+  
+  double res = 0.0;
 
-  vector<pair<double, int>> m(N);
-  rep(i, N){
-    m[i].first = double(p[i].second) / p[i].first;
-    m[i].second = i;
+  rep(i, N) {
+    int x, y; cin >> x >> y;
+    double k = Y - (double(Y - y) / (X - x)) * X;
+    res = max(k, res);
   }
 
-  sort(m.rbegin(), m.rend());
-
-  int index = m[0].second;
-
-  int x = p[index].first, y = p[index].second;
-
-  int p_ = X - x;
-  int q = Y - y;
-
-  int a = p_;
-  int b = p_ * Y - q * X;
-
-  cout << min(1000.0, max(0.0, double(b) / a )) << endl;
+  cout << res << endl;
 }
-
 
