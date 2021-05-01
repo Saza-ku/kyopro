@@ -152,10 +152,12 @@ int main() {
     }
     else{
       if(reversed){
-        deq.push_front(s[i]);
+        if(!deq.empty() && s[i] == deq.front()) deq.pop_front();
+        else deq.push_front(s[i]);
       }
       else{
-        deq.push_back(s[i]);
+        if(!deq.empty() && s[i] == deq.back()) deq.pop_back();
+        else deq.push_back(s[i]);
       }
     }
   }
@@ -170,28 +172,5 @@ int main() {
 
   if(reversed) reverse(t.begin(), t.end());
 
-  int i = 0;
-  stack<int> st;
-
-  while(i < K - 1){
-    st.push(i);
-    int j = i + 1;
-
-    while(t[i] == t[j]){
-      t[i] = t[j] = 'X';
-      st.pop();
-      if(st.empty()) break;
-      i = st.top();
-      j++;
-      if(i < 0 || j >= K) break;
-    }
-
-    i = j;
-  }
-
-  string res = "";
-  rep(i, K){
-    if(t[i] != 'X') res = res + t[i];
-  }
-  cout << res << endl;
+  cout << t << endl;
 }
