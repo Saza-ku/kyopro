@@ -8,11 +8,16 @@ using ll = long long;
 const long long INF = 1e18;
 
 int main() {
-  ll N; cin >> N;
-  ll K; cin >> K;
+  long long N; int K;
+  cin >> N >> K;
 
-  ll first = K / (N*N) + 1;
+  rep(i, K){
+    if(N % 200 == 0) N /= 200;
+    else{
+      N *= 1000;
+      N += 200;
+    }
+  }
 
-  ll r = K % N*N;
-
-  second = 
+  cout << N << endl;
+}
