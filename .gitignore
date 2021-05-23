@@ -1,3 +1,6 @@
 .DS_Store
 bin/
 .vscode/
+
+tempCoderRunnerFile.cpp
+*.dSYM/
