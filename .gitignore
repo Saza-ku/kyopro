@@ -2,5 +2,5 @@
 bin/
 .vscode/
 
-tempCoderRunnerFile.cpp
+tempCodeRunnerFile.cpp
 *.dSYM/
