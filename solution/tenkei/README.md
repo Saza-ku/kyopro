@@ -23,6 +23,9 @@ https://twitter.com/e869120/status/1379202843622576130?s=21
 両端からの最短距離 → 2 回ダイクストラ 
 ![解説](https://pbs.twimg.com/media/Ey41_9eVkAIC8lU?format=jpg&name=large)
 
+# 27 ☆2
+set 使うだけ
+
 # 30 ☆5
 自力AC  
 通ると思わなかったー  
