@@ -35,11 +35,11 @@ set 使うだけ
 通ると思わなかったー  
 素数の逆数和は loglogN っていうのは覚えておく
 
+![解説](https://pbs.twimg.com/media/E0f1L0SUcAMtbcF?format=jpg&name=large)
+
 # 38 ☆3
 解説AC  
 `a * b` のオーバーフローは、`a > LLONG_MAX / b` で OK  
 `1e18` とかいう書き方は、値が `double` で返ってくるので、`ll` にキャストしてから使うこと  
 python は多長倍整数だから `a * b` で OK  
 ただし、`int * int -> int` の割り算は `//` だから注意  
-
-![解説](https://pbs.twimg.com/media/E0f1L0SUcAMtbcF?format=jpg&name=large)
