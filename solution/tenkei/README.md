@@ -52,3 +52,8 @@ python は多長倍整数だから `a * b` で OK
 
 # 50 ☆3
 一次元 DP やるだけ
+
+# 64 ☆3
+解説 AC  
+imos 法しか思いつかなかった
+![解説](https://github.com/E869120/kyopro_educational_90/blob/main/editorial/064.jpg)
