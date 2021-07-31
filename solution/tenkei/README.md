@@ -57,3 +57,7 @@ python は多長倍整数だから `a * b` で OK
 解説 AC  
 imos 法しか思いつかなかった
 ![解説](https://github.com/E869120/kyopro_educational_90/blob/main/editorial/064.jpg)
+
+# 75 ☆3
+なんか一回 TLE 出した。  
+困ったらとりあえず int を ll に変えといたらええねん。
