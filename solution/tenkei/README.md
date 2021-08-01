@@ -37,6 +37,11 @@ set 使うだけ
 
 ![解説](https://pbs.twimg.com/media/E0f1L0SUcAMtbcF?format=jpg&name=large)
 
+# 34 ☆4
+尺取り法  。
+要素の重複を考えないといけないので set ではなく map を使う。  
+要素の重複数が 0 になったときは erase する。
+
 # 38 ☆3
 解説AC  
 `a * b` のオーバーフローは、`a > LLONG_MAX / b` で OK  
