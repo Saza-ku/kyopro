@@ -58,6 +58,10 @@ python は多長倍整数だから `a * b` で OK
 # 50 ☆3
 一次元 DP やるだけ
 
+# 61 ☆2
+deque は要素のランダムアクセスが定数倍でできる。  
+stack や queue は基本的に deque を使った方がいいらしい。（[参考](https://qiita.com/h_hiro_/items/a83a8fd2391d4a3f0e1c#adapter)）
+
 # 64 ☆3
 解説 AC  
 imos 法しか思いつかなかった
