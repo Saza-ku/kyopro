@@ -8,11 +8,5 @@ using ll = long long;
 const long long INF = 1e18;
 
 int main() {
-  ll N; cin >> N;
-  ll K; cin >> K;
-
-  ll first = K / (N*N) + 1;
-
-  ll r = K % N*N;
-
-  second = 
+  cout << "Hello World!" << endl;
+}

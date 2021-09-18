@@ -1,5 +1,5 @@
 // #Sazaの1日1AC
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 //const long long mod=1e9+7;
 const long long INF=9e18;
@@ -138,6 +138,7 @@ int main() {
   //cout << N << endl;
   
   int N, K;
+  N = max(N, K);
   string s;
   cin >> N >> K >> s;
 
