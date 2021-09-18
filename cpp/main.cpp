@@ -5,7 +5,8 @@ using namespace std;
 #define mkp make_pair
 
 using ll = long long;
-const long long INF = 1e18;
+const int INF = 1e9;
+const ll INFL = 1e18;
 
 int main() {
 }

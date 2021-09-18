@@ -5,44 +5,40 @@ using namespace std;
 #define mkp make_pair
 
 using ll = long long;
-const long long INF = 1e18;
+const long long INF = 1e9;
 
+// クソでか配列はスタック領域に置けない（セグフォになる）
+int dp[305][305][305];
 int main() {
-  vector<vector<vector<ll>>> dp(310, vector<vector<ll>>(603, vector<ll>(603)));
   int N, X, Y;
   cin >> N >> X >> Y;
 
-  rep(i, 305){
-  rep(j, 603) {
-    rep(k, 603) {
-      dp[i][j][k] = INF;
+  rep(i, 305) {
+    rep(j, 305) {
+      rep(k, 305) {
+        dp[i][j][k] = INF;
+      }
     }
-  }}
+  }
 
   dp[0][0][0] = 0;
+
   for (int i = 0; i < N; i++) {
     int a, b;
     cin >> a >> b;
-    rep(j, 603) {
-      rep(k, 603) {
+    rep (j, 305) {
+      rep (k, 305) {
         dp[i+1][j][k] = min(dp[i][j][k], dp[i+1][j][k]);
-        if (0 <= j - a && j - a <= 602 &&
-            0 <= k - b && k - b <= 602) {
-          dp[i+1][j][k] = min(dp[i+1][j][k], dp[i][j-a][k-b]+1);
-        }
+        int nj = min(j + a, X);
+        int nk = min(k + b, Y);
+        dp[i+1][nj][nk] = min(dp[i+1][nj][nk], dp[i][j][k] + 1);
       }
     }
   }
-
-  ll res = INF;
-  rep(j, 603) {
-    rep(k, 603) {
-      if (j >= X && k >= Y) {
-        // cout << dp[N][j][k] << endl;
-        res = min(res, dp[N][j][k]);
-      }
-    }
+  int res = dp[N][X][Y];
+  if (res == INF) {
+    cout << -1 << endl;
+    return 0;
   }
-  if (res != INF) cout << res << endl;
-  else cout << -1 << endl;
+  cout << dp[N][X][Y] << endl;
 }
