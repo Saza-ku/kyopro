@@ -7,18 +7,23 @@ int main() {
   int N;
   cin >> N;
 
-  long long res = 0;
-  ll a, b;
-  rep(i, N) {
-    ll x, y;
-    cin >> x >> y;
-    if (i == 0) {
-      a = x;
-      b = y;
-      continue;
-    }
+  vector<ll> vx(N);
+  vector<ll> vy(N);
 
-    res += abs(x - a) + abs(y - b);
+  rep(i, N) {
+    cin >> vx[i] >> vy[i];
+  }
+
+  sort(vx.begin(), vx.end());
+  sort(vy.begin(), vy.end());
+
+  ll x = vx[N/2];
+  ll y = vy[N/2];
+
+
+  ll res = 0;
+  rep(i, N) {
+    res += abs(vx[i] - x) + abs(vy[i] - y);
   }
 
   cout << res << endl;

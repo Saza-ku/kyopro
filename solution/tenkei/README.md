@@ -76,6 +76,9 @@ stack や queue は基本的に deque を使った方がいいらしい。（[�
 imos 法しか思いつかなかった
 ![解説](https://github.com/E869120/kyopro_educational_90/blob/main/editorial/064.jpg)
 
+# 70 ☆4
+一文字固定すればすぐわかる
+
 # 75 ☆3
 なんか一回 TLE 出した。  
 困ったらとりあえず int を ll に変えといたらええねん。
