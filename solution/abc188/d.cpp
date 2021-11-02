@@ -22,7 +22,16 @@ int main() {
 
   ll day = 0;
   ll fee = 0;
+  ll res = 0;
   rep (i, 2*N) {
-
+    if (events[i].second > 0) {
+      fee += events[i].second;
+    }
+    res += (events[i].first - day) * min(fee, C);
+    day = events[i].first;
+    if (events[i].second < 0) {
+      fee += events[i].second;
+    }
   }
+  cout << res << endl;
 }
