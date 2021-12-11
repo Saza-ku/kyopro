@@ -35,7 +35,7 @@ int main() {
   ll res = 0;
   ll day = 0;
   for (auto p : events) {
-    int d, c;
+    ll d, c;
     tie(d, c) = p;
 
     res += min((ll)C, cost) * (d - day);
