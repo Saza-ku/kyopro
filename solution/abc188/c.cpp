@@ -9,22 +9,39 @@ const int INF = 1e9;
 const ll INFL = 1e18;
 
 int main() {
-  ll N;
-  cin >> N;
-  vector<pair<ll, int>> a(1<<N);
-  rep (i, 1<<N) {
-    cin >> a[i].first;
-    a[i].second = i;
+  int N, C;
+  cin >> N >> C;
+  map<int, ll> events;
+  for (int i = 0; i < N; i++) {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    if (events.count(a)) {
+      events[a] += c;
+    }
+    else {
+      events[a] = c;
+    }
+
+    if (events.count(b+1)) {
+      events[b+1] -= c;
+    }
+    else {
+      events[b+1] = -c;
+    }
   }
 
-  ll x = N;
-  rep (i, N-1) {
-    vector<pair<ll, int>> b(0);
-    for (int j = 0; j < 1<<x; j+=2) {
-      b.push_back(max(a[j], a[j+1]));
-    }
-    a = b;
-    x--;
+  ll cost = 0;
+  ll res = 0;
+  ll day = 0;
+  for (auto p : events) {
+    int d, c;
+    tie(d, c) = p;
+
+    res += min((ll)C, cost) * (d - day);
+    day = d;
+    cost += c;
   }
-  cout << min(a[0], a[1]).second + 1 << endl;
+
+  cout << res << endl;
 }
