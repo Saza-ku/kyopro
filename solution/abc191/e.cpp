@@ -15,7 +15,7 @@ struct edge {
 };
 
 // g: グラフの隣接リスト, N: 頂点数, M: 辺数, s: 始点
-vector<int> dfs(vector<vector<edge>> &g, int N, int M, int s) {
+vector<int> dijkstra(vector<vector<edge>> &g, int N, int M, int s) {
   vector<int> ret(N, INF);
   vector<bool> seen(N, false);
   priority_queue<pair<int, int>> q;
@@ -59,8 +59,8 @@ int main() {
   }
 
   rep (i, N) {
-    vector<int> cost_to = dfs(g, N, M, i);
-    vector<int> cost_from = dfs(rg, N, M, i);
+    vector<int> cost_to = dijkstra(g, N, M, i);
+    vector<int> cost_from = dijkstra(rg, N, M, i);
 
     int cost = INF;
     rep (j, N) {
