@@ -18,13 +18,14 @@ struct edge {
 vector<int> dijkstra(vector<vector<edge>> &g, int N, int M, int s) {
   vector<int> ret(N, INF);
   vector<bool> seen(N, false);
-  priority_queue<pair<int, int>> q;
+  priority_queue<pair<ll, ll>, vector<pair<ll, ll>>, greater<pair<ll, ll>>> q;
   q.push(mkp(0, s));
 
   while (!q.empty()) {
     int d, u;
     tie(d, u) = q.top();
     q.pop();
+    if (seen[u]) continue;
     ret[u] = d;
     seen[u] = true;
 
