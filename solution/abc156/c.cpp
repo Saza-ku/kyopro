@@ -9,24 +9,34 @@ const int INF = 1e9;
 const ll INFL = 1e18;
 const int MOD = 1e9 + 7;
 
+
+vector<int> a;
+
+ll f(int x) {
+  int N = a.size();
+  ll ret = 0;
+  rep (i, N) {
+    ret += (x - a[i]) * (x - a[i]);
+  }
+  return ret;
+}
+
 int main() {
-  int a, b;
-  cin >> a >> b;
-
-  vector<int> x(1000000 + 10);
-
-  rep (i, 1000000 + 5) {
-    if (i * 8 / 100 == a) {
-      x[i]++;
-    }
+  int N;
+  cin >> N;
+  a.resize(N);
+  int s = 0;
+  rep (i, N) {
+    cin >> a[i];
+    s += a[i];
   }
 
-  rep (i, 1000000 + 5) {
-    if (i * 10 / 100 == b && x[i] > 0) {
-      cout << i << endl;
-      return 0;
-    }
-  }
+  ll res = INFL;
 
-  cout << -1 << endl;
+  int x = s / N;
+  res = min(res, f(x));
+  x = s / N + 1;
+  res = min(res, f(x));
+
+  cout << res << endl;
 }
